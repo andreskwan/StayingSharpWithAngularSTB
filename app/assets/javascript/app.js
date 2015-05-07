@@ -3,4 +3,4 @@
 *
 * Main module for the App
 */
-angular.module('NoteWrangler', [ngRoute, ngResource]);
+angular.module('NoteWrangler', ['ngRoute', 'ngResource']);
