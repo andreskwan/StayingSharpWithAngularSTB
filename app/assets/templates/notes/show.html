@@ -2,7 +2,10 @@
 	<h1>{{note.title}}</h1>
 	<small>{{note.user.name}}</small>
 </div>
+<h2>Description</h2>
+<p>{{note.description}}</p>
+<h2>Content</h2>
 <p>{{note.content}}</p>
 <p><span class="label label-info">{{note.category.name}}</span></p>
 <a ng-href="#/notes/{{note.id}}/edit" class="btn btn-default">Edit Note</a>
-<a ng-href="" class="btn btn-danger">Delete</a>
+<a ng-href="" ng-click="deleteNote(note)" class="btn btn-danger">Delete</a>
