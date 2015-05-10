@@ -1,0 +1,24 @@
+<h1>Edit: {{user.name}}</h1>
+<form>
+	<fieldset  class="form-group">
+		<label for="username">User Name</label>
+		<input class="form-control" type="text" id="username" name="username" ng-model="user.username">
+	</fieldset>
+	<fieldset  class="form-group">
+		<label for="name">Name</label>
+		<input class="form-control" type="text" id="name" name="name" ng-model="user.name">
+	</fieldset>
+	<fieldset  class="form-group">
+		<label for="twitter_handle">Twitter Handle</label>
+		<input class="form-control" type="text" id="twitter_handle" name="twitter_handle" ng-model="user.twitter_handle">
+	</fieldset>
+	<fieldset  class="form-group">
+		<label for="site">Site</label>
+		<input class="form-control" type="text" id="site" name="site" ng-model="user.site">
+	</fieldset>
+	<fieldset  class="form-group">
+		<label for="bio">Description</label>
+		<textarea class="form-control" type="text" id="bio" name="bio" ng-model="user.bio"> </textarea>
+	</fieldset>
+	<input type="submit" value="{{isSubmitting ? 'Saving...':'Save'}}" class="btn btn-default" ng-click="saveUser(user)" ng-disabled="isSubmitting">
+</form>

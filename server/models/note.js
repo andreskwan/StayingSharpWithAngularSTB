@@ -8,7 +8,7 @@ var notes = [
   {"id":4 ,"userId": 2, "categoryId": 6, "description" : "QUESTIONABLE DESCRIPTION GOES HERE", "title" : "TEST TEST TEST", "content": "QUESTIONABLE CONTENT GOES HERE"},
   {"id":5 ,"userId": 4, "categoryId": 6, "description" : "Define Service", "title" : "What is a Service", "content": "Service: Angular services are objects that are wired together using dependency injection (DI). You can use services to organize and share code across your app."},
   {"id":6 ,"userId": 5, "categoryId": 6, "description" : "Steps for Creating a Service", "title" : "How do you create a Service?", "content": "You can register a service to our Angular module `app` with a one of the following 5 recipes: \\n 	- **factory**  \\n 	- **provider**  \\n 	- **service**  \\n 	- **value**  \\n 	- **constant** "}
-]
+];
 var lastId = 6;
 
 var buildNotes = function() {
@@ -23,8 +23,8 @@ var buildNotes = function() {
     note.category = Category.get(note.categoryId);
     builtNotes.push(note);
   }
-  return builtNotes
-}
+  return builtNotes;
+};
 
 module.exports = {
   get: function(id) {
@@ -36,6 +36,7 @@ module.exports = {
     return buildNotes();
   },
   update: function(note) {
+    debugger;
     var updatedNote;
     for(var i=0, l=notes.length; i < l; i++) {
       if(notes[i].id === note.id){
@@ -60,7 +61,7 @@ module.exports = {
   create: function(note) {
     lastId += 1;
     note.id = lastId;
-    notes.push(note)
+    notes.push(note);
     return note;
   }
-}
+};

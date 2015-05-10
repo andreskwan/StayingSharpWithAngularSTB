@@ -8,7 +8,18 @@
 	<link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
 </head>
 <body>
-	<h1><a ng-href="#/">NoteWrangler!</a></h1>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<div class="navbar-brand"><a ng-href="/#/">NoteWrangler</a></div>
+				<ul class="nav navbar-nav">
+					<!-- <li class="active"><a href="#/notes">Notes</a></li> -->
+					<li><a href="#/notes">Notes</a></li>
+					<li><a href="#/users">Users</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<div ng-view class="container-fluid"></div>
 </body>
 
@@ -24,10 +35,20 @@
 <!-- Directives -->
 
 <!-- Controllers -->
+<!-- notes -->
 <script src="assets/javascript/controllers/noteCreateController.js"></script>
 <script src="assets/javascript/controllers/noteEditController.js"></script>
 <script src="assets/javascript/controllers/noteIndexController.js"></script>
 <script src="assets/javascript/controllers/noteShowController.js"></script>
+<!-- users -->
+<script src="assets/javascript/controllers/userCreateController.js"></script>
+<script src="assets/javascript/controllers/userEditController.js"></script>
+<script src="assets/javascript/controllers/userIndexController.js"></script>
+<script src="assets/javascript/controllers/userShowController.js"></script>
+
 <!-- Services -->
+<!-- notes -->
 <script src="assets/javascript/services/note.js"></script>
+<!-- users -->
+<script src="assets/javascript/services/user.js"></script>
 </html>

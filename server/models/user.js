@@ -14,13 +14,61 @@ var users = [
   {"id": 13, "email": "alyssa@codeschool.com",  "username": "AlyssaNicoll", "name": "Alyssa Nicoll", "bio": "Code School Teacher. Angular Lover. Scuba Diver.", "twitter_handle": "@AlyssaNicoll", "site": "alyssa.io"}
 ];
 
+var lastId = 14;
+
+var buildUsers = function() {
+  // Make a deep copy so we don't change the main users array
+  var rawUsers = JSON.parse(JSON.stringify(users));
+  var builtUsers = [];
+  var user;
+
+  for(var i=0, l=rawUsers.length; i < l; i++) {
+    user = rawUsers[i];
+    user.user = User.get(user.userId);
+    user.category = Category.get(user.categoryId);
+    builtUsers.push(user);
+  }
+  return builtUsers;
+};
+
 module.exports = {
   get: function(id) {
+    // debugger;
     return _.find(users, function(user){
       return user.id === id;
     });
   },
   all: function() {
     return users;
+  },
+  update: function(user) {
+    debugger;
+    var updatedUser;
+    for(var i=0, l=users.length; i < l; i++) {
+      if(users[i].id === user.id){
+        _.assign(users[i], user);
+        updatedUser = users[i];
+        break;
+      }
+    }
+    return updatedUser;
+  },
+  delete: function(id) {
+    var deletedUser;
+    for(var i=0, l=users.length; i < l; i++) {
+      if(users[i].id === id){
+        deletedUser = users[i];
+        users.splice(i, 1);
+        break;
+      }
+    }
+    return deletedUser;
+  },
+  create: function(user) {
+    lastId += 1;
+    user.id = lastId;
+    users.push(user);
+    return user;
   }
-}
+
+};

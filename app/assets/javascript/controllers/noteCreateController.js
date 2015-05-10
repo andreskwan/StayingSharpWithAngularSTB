@@ -14,6 +14,8 @@ angular.module('NoteWrangler')
 		note.$save().then(function(note){
 			// console.log("------this is the note returned from server: ",note);
 			$location.path("/notes/"+note.id);
+		}).catch(function(errors){
+			//validations
 		}).finally(function(){
 			$scope.isSubmitting = false;
 		});

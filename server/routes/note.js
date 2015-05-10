@@ -19,7 +19,7 @@ module.exports = function(app) {
     // So things like button isSubmitting states can be demonstrated
     setTimeout(function(){
       res.json(Note.update(req.body));
-    },1000)
+    },1000);
   });
 
   app.get('/notes/:id', function(req, res) {
